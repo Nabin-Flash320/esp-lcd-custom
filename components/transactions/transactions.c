@@ -10,12 +10,12 @@
 
 #if CONFIG_IDF_TARGET_ESP32S3
 static const s_transaction_pins_t transaction_pins = {
-    .data_pin_array = {14, 13, 12, 11, 10, 19, 46, 18},
-    .rd_pin = 2,
-    .wr_pin = 4,
-    .rs_pin = 5,
-    .cs_pin = 33,
-    .rst_pin = 32,
+    .data_pin_array = {1, 2, 3, 4, 5, 6, 7, 8},
+    .rd_pin = 9,
+    .wr_pin = 10,
+    .rs_pin = 11,
+    .cs_pin = 12,
+    .rst_pin = 13,
 };
 #else
 static const s_transaction_pins_t transaction_pins = {
@@ -55,6 +55,7 @@ void send_command(const uint8_t *command, size_t length)
     ESP_ERROR_CHECK(gpio_set_level(transaction_pins.wr_pin, 1));
     ESP_ERROR_CHECK(gpio_set_level(transaction_pins.cs_pin, 1));
 }
+
 void send_data(const uint8_t *data, size_t length)
 {
     ESP_ERROR_CHECK(gpio_set_level(transaction_pins.wr_pin, 0));

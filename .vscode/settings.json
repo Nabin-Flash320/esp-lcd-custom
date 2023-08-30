@@ -2,6 +2,8 @@
     "files.associations": {
         "esp_lcd_panel_vendor.h": "c",
         "transactions.h": "c",
-        "ili9486_driver.h": "c"
+        "ili9486_driver.h": "c",
+        "task.h": "c",
+        "freertos.h": "c"
     }
 }

@@ -10,7 +10,7 @@
 
 /*=========================Static function declearation section start=========================*/
 static int x_gap = 0;
-static int y_gap = 20;
+static int y_gap = 0;
 /*=========================Static function declearation section end=========================*/
 
 /*=========================Public function definition section start=========================*/
@@ -164,9 +164,10 @@ void ili9486_draw_function(int x_start, int y_start, int x_end, int y_end, const
     send_data(row_location_data, 4);
 
     size_t len = ((x_end - x_start) * (y_end - y_start) * 16) / 8;
-    uint8_t meme_write[1] = {0x2C};
-    send_command(meme_write, 1);
-    send_data((uint8_t*)color_map, len);
+    printf("length %d\n", len);
+    // uint8_t meme_write[1] = {0x2C};
+    // send_command(meme_write, 1);
+    // send_data((uint8_t*)color_map, len);
 }
 
 /*=========================Public function definition section end=========================*/
